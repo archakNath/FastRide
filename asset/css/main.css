@@ -1,0 +1,332 @@
+header {
+    background-color: var(--black);
+    color: var(--white);
+    position: fixed;
+    width: 100%;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .nav1 {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}
+
+header .logo {
+    font-size: 1.8vw;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    font-size: 1.2vw;
+    gap: 1vw;
+    align-items: center;
+}
+
+header ul li {
+    cursor: pointer;
+    transition: all .2s;
+}
+
+header ul li:hover {
+    color: var(--yellow-4);
+}
+
+header .sign-up {
+    background-color: var(--white);
+    color: var(--black);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+
+header .sign-up:hover {
+    background-color: rgba(0, 0, 0, 0.16);
+}
+
+main {
+    width: 100%;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+main .container {
+    display: flex;
+}
+
+main .text-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+main .text-content h1 {
+    line-height: 1em;
+    margin-bottom: 20px;
+}
+
+main .text-content input {
+    width: 70%;
+    margin-block-start: 5px;
+    padding: 3px 8px;
+    outline: none;
+}
+
+main .text-content .horizontal {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+main .text-content .horizontal img {
+    height: 3.5vw;
+    cursor: pointer;
+    padding: .9vw;
+    border-radius: 100%;
+    transition: all .2s;
+}
+
+main .text-content .horizontal img:hover {
+    background-color: rgba(0, 0, 0, 0.199);
+}
+
+main .text-content button {
+    margin-top: 5px;
+    width: fit-content;
+    padding: 5px 8px;
+    background-color: var(--yellow-4);
+    border-radius: 3px;
+    border: none;
+    transition: all .2s;
+    cursor: pointer;
+    color: var(--black);
+}
+
+main .text-content button:hover {
+    background-color: var(--yellow-1);
+}
+
+main .image-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+main .image-content img {
+    width: 80%;
+    height: 80%;
+    margin-top: 30px;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+
+@media(max-width: 600px) {
+    main .container {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    main .text-content {
+        width: 100%;
+        height: 50%;
+        justify-content: end;
+    }
+
+    main .text-content .horizontal input {
+        width: 100%;
+    }
+
+    main .text-content input {
+        min-width: 100px;
+        width: auto;
+    }
+
+    main .text-content .horizontal img {
+        height: 7vw;
+        padding: 1vw;
+    }
+
+    main .image-content {
+        width: 100%;
+        height: 50%;
+    }
+
+    main .image-content img {
+        width: 100%;
+    }
+}
+
+section.suggestions {
+    width: 100%;
+    background-color: var(--white);
+    padding-block: 3vw;
+    color: var(--black);
+}
+
+.suggestions .card-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.suggestions .card-list .card {
+    width: 32%;
+    display: flex;
+    background-color: white;
+    padding: 1vw 1.5vw;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.055);
+    border-radius: 10px;
+    transition: all .2s;
+}
+
+.suggestions .card-list .card:hover {
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.374);
+}
+
+.suggestions .card-list .card .text-content p {
+    font-size: 1.1vw;
+    margin-block: 1vw;
+}
+
+.suggestions .card-list .card .text-content button {
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.suggestions .card-list .card img {
+    width: 40%;
+    object-fit: contain;
+}
+
+@media(max-width: 600px) {
+    .suggestions .card-list {
+        flex-direction: column;
+        gap: 2vw;
+    }
+
+    .suggestions .card-list .card {
+        width: 100%;
+        padding: 3vw;
+    }
+
+    .suggestions .card-list .card .text-content p {
+        font-size: 3vw;
+        margin-block: 2vw;
+    }
+}
+
+.drive {
+    width: 100%;
+    background-color: var(--white);
+}
+
+.drive .container {
+    display: flex;
+}
+
+.drive .image-content {
+    width: 50%;
+}
+
+.drive .image-content img {
+    width: 90%;
+    height: 80vh;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.drive .text-content {
+    width: 50%;
+    padding: 4vw;
+}
+
+.drive .text-content h1 {
+    line-height: 4vw;
+}
+
+.drive .text-content>p {
+    margin-block: 3vw;
+}
+
+.drive .text-content .horizontal {
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+}
+
+.drive .text-content .horizontal button {
+    background-color: var(--black);
+    border: none;
+    padding: 1vw 1.5vw;
+    color: white;
+    border-radius: .5vw;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.drive .text-content .horizontal button:hover {
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.747);
+    color: var(--yellow-4);
+}
+
+.drive .text-content .horizontal p {
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.drive .text-content .horizontal p:hover {
+    color: var(--yellow-1);
+}
+
+@media(max-width: 600px) {
+    .drive .container {
+        flex-direction: column;
+    }
+
+    .drive .image-content {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .drive .image-content img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .drive .text-content {
+        width: 100%;
+    }
+
+    .drive .text-content h1{
+        line-height: 8vw;
+        margin-top: 3vw;
+    }
+
+    .drive .text-content>p {
+        margin-block: 6vw;
+    }
+
+    .drive .text-content .horizontal{
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .drive .text-content .horizontal button {
+        padding: 2.5vw 3.5vw;
+        border-radius: 10px;
+        margin-bottom: 1vw;
+    }
+    
+}
