@@ -58,22 +58,22 @@ h2{
 
 @media(max-width: 600px){
     p, strong{
-        font-size: 3vw;
+        font-size: 4vw;
     }
     
     input{
-        font-size: 3vw;
+        font-size: 4vw;
     }
     
     button{
-        font-size: 3vw;
+        font-size: 4vw;
     }
     
     h1{
-        font-size: 10vw;
+        font-size: 12vw;
     }
 
     h2{
-        font-size: 8vw;
+        font-size: 10vw;
     }
 }

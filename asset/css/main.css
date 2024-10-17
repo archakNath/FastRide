@@ -1,3 +1,4 @@
+/* ===============HEADER================== */
 header {
     background-color: var(--black);
     color: var(--white);
@@ -37,6 +38,16 @@ header ul li:hover {
     color: var(--yellow-4);
 }
 
+header .nav2{
+    display: flex;
+    align-items: center;
+}
+
+header .nav2 img{
+    height: 30px;
+    display: none;
+}
+
 header .sign-up {
     background-color: var(--white);
     color: var(--black);
@@ -48,6 +59,22 @@ header .sign-up {
 header .sign-up:hover {
     background-color: rgba(0, 0, 0, 0.16);
 }
+
+@media(max-width: 600px){
+    header .logo {
+        font-size: 5vw;
+    }
+
+    header ul{
+        display: none;
+    }
+
+    header .nav2 img{
+        display: block;
+    }
+}
+
+/* ================MAIN=================== */
 
 main {
     width: 100%;
@@ -73,8 +100,8 @@ main .text-content h1 {
 
 main .text-content input {
     width: 70%;
-    margin-block-start: 5px;
-    padding: 3px 8px;
+    margin-block-start: 1vw;
+    padding: 5px 12px;
     outline: none;
 }
 
@@ -97,15 +124,16 @@ main .text-content .horizontal img:hover {
 }
 
 main .text-content button {
-    margin-top: 5px;
+    margin-top: 1vw;
     width: fit-content;
-    padding: 5px 8px;
+    padding: 8px 15px;
     background-color: var(--yellow-4);
     border-radius: 3px;
     border: none;
     transition: all .2s;
     cursor: pointer;
     color: var(--black);
+    font-weight: 500;
 }
 
 main .text-content button:hover {
@@ -163,6 +191,8 @@ main .image-content img {
         width: 100%;
     }
 }
+
+/* ==============SUGGESTIONS================ */
 
 section.suggestions {
     width: 100%;
@@ -225,6 +255,7 @@ section.suggestions {
         margin-block: 2vw;
     }
 }
+/* ===============DRIVE=================== */
 
 .drive {
     width: 100%;
@@ -310,7 +341,7 @@ section.suggestions {
     }
 
     .drive .text-content h1{
-        line-height: 8vw;
+        line-height: 11vw;
         margin-top: 3vw;
     }
 
