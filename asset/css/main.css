@@ -260,7 +260,7 @@ section.suggestions {
 }
 
 .suggestions .card-list .card {
-    width: 32%;
+    width: 48%;
     display: flex;
     background-color: white;
     padding: 1vw 1.5vw;
@@ -273,16 +273,26 @@ section.suggestions {
     box-shadow: 0 0 10px rgba(128, 128, 128, 0.374);
 }
 
+.suggestions .card-list .card .text-content{
+    padding: 2vw;
+}
+
 .suggestions .card-list .card .text-content p {
-    font-size: 1.1vw;
     margin-block: 1vw;
 }
 
 .suggestions .card-list .card .text-content button {
     border: none;
-    padding: 5px 8px;
+    padding: 1vw 1.5vw;
     border-radius: 5px;
     cursor: pointer;
+    transition: all .2s;
+}
+
+.suggestions .card-list .card .text-content button:hover{
+    background-color: var(--black);
+    color: var(--yellow-4);
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.806);
 }
 
 .suggestions .card-list .card img {
@@ -411,4 +421,57 @@ section.suggestions {
         margin-bottom: 1vw;
     }
     
+}
+
+footer{
+    background-color: var(--black);
+    color: var(--white);
+    padding-block: 2vw;
+}
+
+footer p{
+    color: gray;
+}
+
+footer .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .container > div{
+    width: 32%;
+}
+
+footer .links p{
+    cursor: pointer;
+    transition: all .2s;
+}
+
+footer .links p:hover{
+    color: var(--yellow-4);
+}
+
+footer .social img{
+    height: 40px;
+    margin-right: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: all .2s;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+footer .social img:hover{
+    background-color: rgba(128, 128, 128, 0.457);
+}
+
+@media(max-width: 600px){
+    footer .container{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    footer .container > div{
+        width: 100%;
+    }
 }

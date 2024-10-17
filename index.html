@@ -29,8 +29,8 @@
                 <p class="logo">FastRide</p>
                 <nav>
                     <ul>
-                        <li>Ride</li>
-                        <li>Drive</li>
+                        <li class="rideLink">Ride</li>
+                        <li class="driveLink">Drive</li>
                         <li>About</li>
                     </ul>
                 </nav>
@@ -45,7 +45,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <div class="container">
             <div class="text-content">
                 <p>Go anywhere with</p>
@@ -73,23 +73,23 @@
                     <div class="text-content">
                         <strong>Ride</strong>
                         <p>Go anywhere with FastRide. Request a ride, hop in, and go.</p>
-                        <button>Details</button>
+                        <button class="rideLink">Details</button>
                     </div>
                     <img src="/asset/resource/images/drone-taxi.jpg" alt="">
                 </div>
-                <div class="card">
+                <!-- <div class="card">
                     <div class="text-content">
                         <strong>Package</strong>
                         <p>FastRide Connect makes same-day delivery easier than ever.</p>
                         <button>Details</button>
                     </div>
                     <img src="/asset/resource/images/delivery.png" alt="">
-                </div>
+                </div> -->
                 <div class="card">
                     <div class="text-content">
                         <strong>Drive</strong>
                         <p>Make Money on your schedule. Drive at your own pace.</p>
-                        <button>Details</button>
+                        <button class="driveLink">Details</button>
                     </div>
                     <img src="/asset/resource/images/driver.png" alt="">
                 </div>
@@ -97,14 +97,15 @@
         </div>
     </section>
 
-    <div class="drive">
+    <div class="drive" id="drive">
         <div class="container">
             <div class="image-content">
                 <img src="/asset/resource/images/driving.png" alt="">
             </div>
             <div class="text-content">
                 <h1>Drive when you want, make what you need</h1>
-                <p>Make money on your schedule with deliveries or rides—or both. You can use your own car or choose a rental through FastRide.</p>
+                <p>Make money on your schedule with deliveries or rides—or both. You can use your own car or choose a
+                    rental through FastRide.</p>
 
                 <div class="horizontal">
                     <button>Get Started</button>
@@ -113,6 +114,32 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="container">
+            <div class="about">
+                <strong>FastRide - Online Transport System</strong>
+                <p>FastRide is an online transport system that connects passengers with drivers through a mobile or web
+                    platform. Users can easily book rides, track their drivers in real time, and enjoy convenient,
+                    on-demand transportation with secure payment options. The system emphasizes efficiency and
+                    user-friendly service.</p>
+            </div>
+            <div class="links">
+                <strong>Links</strong>
+                <p class="rideLink">Ride</p>
+                <p class="driveLink">Drive</p>
+                <p>About</p>
+            </div>
+            <div class="social">
+                <strong>Socials</strong>
+                <div>
+                    <img src="/asset/resource/icons/facebook.svg" alt="">
+                    <img src="/asset/resource/icons/twitter.svg" alt="">
+                    <img src="/asset/resource/icons/instagram.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="/asset/js/universal.js"></script>
     <script src="/asset/js/main.js"></script>

@@ -22,6 +22,7 @@
     box-sizing: border-box;
     font-family: 'Satoshi', sans-serif;
     /* color: var(--black); */
+    scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar{

@@ -1,3 +1,17 @@
+const driveLinks = document.querySelectorAll(".driveLink");
+driveLinks.forEach(link => {
+    link.onclick = () => {
+        document.getElementById("drive").scrollIntoView();
+    }
+});
+
+const rideLinks = document.querySelectorAll(".rideLink");
+rideLinks.forEach(link => {
+    link.onclick = () => {
+        document.getElementById("main").scrollIntoView();
+    }
+});
+
 const locateButton = document.querySelector(".locateButton");
 
 locateButton.onclick = () => {
