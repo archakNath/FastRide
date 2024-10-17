@@ -49,6 +49,37 @@
     }
 }
 
+/* ================MOBILE NAV===================== */
+
+.mobile-nav{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--white);
+    z-index: 999;
+    color: var(--black);
+    display: none;
+}
+
+.mobile-nav .horizontal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-nav h2{
+    margin-bottom: 20px;
+}
+
+.mobile-nav img{
+    height: 30px;
+}
+
+.mobile-nav p{
+    font-size: 8vw;
+    margin-bottom: 10px;
+}
+
 /* ===============HEADER================== */
 header {
     background-color: var(--black);

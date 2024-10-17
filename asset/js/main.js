@@ -1,6 +1,21 @@
+// Mobile navigation
+const navOpenButton = document.querySelector("header .nav2 img");
+const navCancelButton = document.querySelector(".mobile-nav img");
+const mobileNav = document.querySelector(".mobile-nav");
+
+navOpenButton.onclick = () => {
+    mobileNav.style.display = "block";
+}
+
+navCancelButton.onclick = () => {
+    mobileNav.style.display = "none";
+}
+
+// Redirect to links
 const driveLinks = document.querySelectorAll(".driveLink");
 driveLinks.forEach(link => {
     link.onclick = () => {
+        mobileNav.style.display = "none";
         document.getElementById("drive").scrollIntoView();
     }
 });
@@ -8,10 +23,12 @@ driveLinks.forEach(link => {
 const rideLinks = document.querySelectorAll(".rideLink");
 rideLinks.forEach(link => {
     link.onclick = () => {
+        mobileNav.style.display = "none";
         document.getElementById("main").scrollIntoView();
     }
 });
 
+// Find current location
 const locateButton = document.querySelector(".locateButton");
 
 locateButton.onclick = () => {
@@ -32,6 +49,7 @@ locateButton.onclick = () => {
       
 }
 
+// Find best route
 const findRouteButton = document.querySelector("main .text-content button");
 const locationInput = document.querySelector(".locationInput");
 const destinationInput = document.querySelector(".destinationInput");
