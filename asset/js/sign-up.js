@@ -86,6 +86,14 @@ continueButton.onclick = () => {
         messageAlert("Error in Phone", "Enter a valid phone number", false);
     } else {
         messageAlert("Successful", "Sign Up successful", true);
+        sessionStorage.setItem("name", `${firstName} ${lastName}`);
+        sessionStorage.setItem("email", email);
+        sessionStorage.setItem("phone", phoneNumber);
+        if(sessionStorage.getItem("signInAccountType") == 'driver'){
+            setTimeout(() => {
+                window.location.href = '/page/document.html';
+            }, 3000);
+        }
     }
 }
 

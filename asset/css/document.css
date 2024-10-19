@@ -1,0 +1,159 @@
+main{
+    width: 100%;
+    padding-top: 4vw;
+    background-color: #F8FAFB;
+    color: var(--black);
+}
+
+main .container{
+    display: flex;
+}
+
+main .container > div{
+    width: 50%;
+}
+
+main .left-pane{
+    height: 90vh;
+}
+
+main .left-pane img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+main .right-pane{
+    padding: 3vw 4vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main .right-pane h2{
+    line-height: 3.5vw;
+    margin-bottom: 2vw;
+}
+
+main .right-pane .driver-info{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+main .right-pane .profile-picture{
+    height: 100px;
+    width: 75px;
+    background-color: rgba(128, 128, 128, 0.123);
+    border-radius: 10px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    padding: 5px;
+}
+
+main .right-pane .profile-picture img{
+    height: 30px;
+    padding: 5px;
+    background-color: rgba(128, 128, 128, 0.4);
+    border-radius: 100%;
+    transition: all .2s;
+}
+
+main .right-pane .profile-picture:hover img{
+    background-color: rgb(183, 183, 183);
+}
+
+main .right-pane input, main .right-pane select, main .right-pane .input{
+    padding: 8px 12px;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.123);
+    border-radius: 10px;
+    outline: none;
+    width: 100%;
+}
+
+main .right-pane .input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+main .right-pane .input > div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+main .right-pane .input .preview{
+    height: 100px;
+    background-image: url(/asset/resource/icons/id.svg);
+    width: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+main .right-pane .input .button{
+    height: 30px;
+    padding: 5px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+main .right-pane .input .button:hover{
+    background-color: rgba(128, 128, 128, 0.123);
+}
+
+main .right-pane button{
+    padding: 8px 12px;
+    background-color: var(--black);
+    color: white;
+    transition: all .2s;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+main button:hover{
+    box-shadow: 0 0 10px gray;
+    color: var(--yellow-4);
+}
+
+@media(max-width: 600px){
+    main .container{
+        flex-direction: column;
+    }
+
+    main .container > div{
+        width: 100%;
+    }
+
+    main .left-pane{
+        height: 30vh;
+    }
+
+    main .right-pane h2{
+        line-height: 9vw;
+        font-size: 6vw;
+        text-align: center;
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    main .right-pane h2::before{
+        content: "";
+        height: 1px;
+        background-color: #212121;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+    }
+}

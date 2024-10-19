@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/asset/favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/asset/favicon/favicon.ico" type="image/x-icon">
+    <title>FastRide - Online Transport System</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/asset/css/universal.css">
+    <link rel="stylesheet" href="/asset/css/document.css">
+</head>
+
+<body>
+
+    <div class="message-stack">
+        <div class="message">
+            <div class="main-content">
+                <img src="/asset/resource/icons/error.svg" alt="">
+                <div class="text-content">
+                    <strong>Login failed</strong>
+                    <p>Try another way</p>
+                </div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="nav1">
+                <p class="logo">FastRide</p>
+            </div>
+            <div class="nav2">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="left-pane">
+                <img src="/asset/resource/images/documents.png" alt="">
+            </div>
+            <div class="right-pane">
+                <h2>Driver Documents and Vehicle Information</h2>
+                <div class="driver-info">
+                    <div class="profile-picture">
+                        <img src="/asset/resource/icons/add-profile.svg" alt="">
+                        <input type="file" id="profileInput" accept="image/*" style="display: none;" />
+                    </div>
+                    <div class="text-content">
+                        <strong id="driver-name">Archak Nath</strong>
+                        <p id="driver-phone">Phone: 9330397140</p>
+                        <p id="driver-email">Email: archak@nath.com</p>
+                    </div>
+                </div>
+                <input type="text" name="" id="registration-number-input"
+                    placeholder="Vehicle Registration Number (eg. GJ 03 AY 1097)">
+                <input type="text" name="" id="vehicle-color-input"
+                    placeholder="Vehicle Color (eg. Red/White/Black/etc.)">
+                <select id="vehicle" name="vehicle">
+                    <option value="choose">Choose Vehicle Company</option>
+                    <option value="Maruti Suzuki">Maruti Suzuki</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Tata Motors">Tata Motors</option>
+                    <option value="Mahindra">Mahindra</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Skoda">Skoda</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Renault">Renault</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="MG Motor">MG Motor</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="BMW">BMW</option>
+                </select>
+                <input type="text" name="" id="vehicle-model-input" placeholder="Vehicle Model Name (eg. WagonR)">
+                <div class="input">
+                    <div>
+                        <img alt="" class="preview">
+                        <p>Driving License</p>
+                    </div>
+                    <img src="/asset/resource/icons/upload.svg" alt="" class="button">
+                    <input type="file" class="input" accept="image/*" style="display: none;" />
+                </div>
+                <button>Continue</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/asset/js/document.js"></script>
+</body>
+
+</html>
