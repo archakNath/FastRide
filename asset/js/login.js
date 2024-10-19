@@ -20,6 +20,11 @@ function messageAlert(title, message, type) {
             document.querySelector(".message-stack .message").style.color = "var(--green)";
             document.querySelector(".message-stack .message .progress .progress-bar").style.backgroundColor = "var(--green)";
             document.querySelector(".message-stack .message img").src = "/asset/resource/icons/circle-check.svg";
+        } else {
+            document.querySelector(".message-stack .message").style.backgroundColor = "var(--light-red)";
+            document.querySelector(".message-stack .message").style.color = "var(--red)";
+            document.querySelector(".message-stack .message .progress .progress-bar").style.backgroundColor = "var(--red)";
+            document.querySelector(".message-stack .message img").src = "/asset/resource/icons/error.svg";
         }
 
         // Progress update animation
