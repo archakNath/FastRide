@@ -80,79 +80,63 @@
     margin-bottom: 10px;
 }
 
-/* ===============HEADER================== */
-header {
-    background-color: var(--black);
-    color: var(--white);
-    position: fixed;
+/* ============LOGIN OPTIONS================ */
+
+.login-options{
     width: 100%;
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-}
-
-header .nav1 {
-    display: flex;
-    align-items: center;
-    gap: 3vw;
-}
-
-header .logo {
-    font-size: 1.8vw;
-}
-
-header ul {
-    display: flex;
-    list-style: none;
-    font-size: 1.2vw;
-    gap: 1vw;
-    align-items: center;
-}
-
-header ul li {
-    cursor: pointer;
-    transition: all .2s;
-}
-
-header ul li:hover {
-    color: var(--yellow-4);
-}
-
-header .nav2{
-    display: flex;
-    align-items: center;
-}
-
-header .nav2 img{
-    height: 30px;
+    height: 100vh;
+    position: fixed;
+    background-color: white;
     display: none;
+    justify-content: center;
+    align-items: center;
 }
 
-header .sign-up {
-    background-color: var(--white);
-    color: var(--black);
-    padding: 5px 10px;
+.login-options .close-button{
+    height: 30px;
+    position: absolute;
+    right: 7vw;
+    top: 8vw;
+    cursor: pointer;
+}
+
+.login-options .horizontal {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    gap: 20px;
+}
+
+.login-options .horizontal div{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.login-options .horizontal img{
+    height: 4vw;
     border-radius: 10px;
 }
 
-
-header .sign-up:hover {
-    background-color: rgba(0, 0, 0, 0.16);
-}
-
 @media(max-width: 600px){
-    header .logo {
-        font-size: 5vw;
+    .login-options .horizontal {
+        flex-direction: column;
     }
 
-    header ul{
-        display: none;
+    .login-options .close-button{
+        top: 20vw;
     }
 
-    header .nav2 img{
-        display: block;
+    .login-options .horizontal div{
+        gap: 20px;
+    }
+
+    .login-options .horizontal h2{
+        font-size: 7vw;
+    }
+
+    .login-options .horizontal img{
+        height: 10vw;
     }
 }
 

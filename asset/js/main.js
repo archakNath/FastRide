@@ -11,6 +11,53 @@ navCancelButton.onclick = () => {
     mobileNav.style.display = "none";
 }
 
+// Login message
+const loginDialog = document.querySelector(".login-options");
+const driverSignIn = document.querySelector(".driverSignIn");
+const riderSignIn = document.querySelector(".riderSignIn");
+const loginButtons = document.querySelectorAll(".log-in");
+const signupButtons = document.querySelectorAll(".sign-up");
+const loginCancelButton = document.querySelector(".login-options .close-button");
+
+loginButtons.forEach(button => {
+    button.onclick = () => {
+        mobileNav.style.display = "none";
+        loginDialog.style.display = "flex";
+        driverSignIn.textContent = "Sign in to driver and deliver";
+        riderSignIn.textContent = "Sign in to ride";
+        sessionStorage.setItem("signInType", "login");
+    }
+});
+
+signupButtons.forEach(button => {
+    button.onclick = () => {
+        mobileNav.style.display = "none";
+        loginDialog.style.display = "flex";
+        driverSignIn.textContent = "Sign up to drive and deliver";
+        riderSignIn.textContent = "Create a rider account";
+        sessionStorage.setItem("signInType", "signin");
+    }
+});
+
+driverSignIn.onclick = () => {
+    sessionStorage.setItem("signInAccountType", "driver");
+    if(sessionStorage.getItem("signInType") == 'login'){
+        window.location.href = "/page/login.html";
+    }
+}
+
+riderSignIn.onclick = () => {
+    sessionStorage.setItem("signInAccountType", "rider");
+    if(sessionStorage.getItem("signInType") == 'login'){
+        window.location.href = "/page/login.html";
+    }
+}
+
+loginCancelButton.onclick = () => {
+    loginDialog.style.display = "none";
+}
+
+
 // Redirect to links
 const driveLinks = document.querySelectorAll(".driveLink");
 driveLinks.forEach(link => {
@@ -34,19 +81,19 @@ const locateButton = document.querySelector(".locateButton");
 locateButton.onclick = () => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
-          function(position) {
-            const latitude = position.coords.latitude;
-            const longitude = position.coords.longitude;
-            locationInput.value = `Latitude: ${latitude}, Longitude: ${longitude}`;
-          },
-          function(error) {
-            console.error("Error getting geolocation: ", error.message);
-          }
+            function (position) {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                locationInput.value = `Latitude: ${latitude}, Longitude: ${longitude}`;
+            },
+            function (error) {
+                console.error("Error getting geolocation: ", error.message);
+            }
         );
-      } else {
+    } else {
         console.error("Geolocation is not supported by this browser.");
-      }
-      
+    }
+
 }
 
 // Find best route
@@ -57,7 +104,7 @@ const dialogBox = document.querySelector(".message");
 const dialogCancelButton = document.querySelector(".message .message-box button");
 
 findRouteButton.onclick = () => {
-    if(locationInput.value == '' || destinationInput.value == ''){
+    if (locationInput.value == '' || destinationInput.value == '') {
         dialogBox.style.display = "flex";
     }
 }

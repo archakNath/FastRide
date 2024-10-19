@@ -1,0 +1,65 @@
+main{
+    height: 100vh;
+    width: 100%;
+    padding-top: 100px;
+    background-color: var(--white);
+}
+
+main .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+main .container > img{
+    height: 200px;
+}
+
+main input{
+    padding: 8px 12px;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.123);
+    border-radius: 10px;
+    outline: none;
+    max-width: 300px;
+    width: 100%;
+}
+
+main .horizontal{
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+main .horizontal img{
+    height: 35px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 100%;
+    transition: all .2s;
+}
+
+main .horizontal img:hover{
+    background-color: rgba(128, 128, 128, 0.123);
+}
+
+main button{
+    padding: 8px 12px;
+    background-color: var(--black);
+    color: white;
+    transition: all .2s;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    max-width: 300px;
+    width: 100%;
+}
+
+main button:hover{
+    box-shadow: 0 0 10px gray;
+    color: var(--yellow-4);
+}
