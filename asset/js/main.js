@@ -43,6 +43,8 @@ driverSignIn.onclick = () => {
     sessionStorage.setItem("signInAccountType", "driver");
     if(sessionStorage.getItem("signInType") == 'login'){
         window.location.href = "/page/login.html";
+    } else {
+        window.location.href = "/page/sign-up.html";
     }
 }
 
@@ -50,6 +52,8 @@ riderSignIn.onclick = () => {
     sessionStorage.setItem("signInAccountType", "rider");
     if(sessionStorage.getItem("signInType") == 'login'){
         window.location.href = "/page/login.html";
+    } else {
+        window.location.href = "/page/sign-up.html";
     }
 }
 
