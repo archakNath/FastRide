@@ -1,3 +1,25 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import { getDatabase, ref, set, child, get, update, remove } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js";
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyB54Gf3Jn40KHjXWSjd9NDK57_ZvcN_ioE",
+    authDomain: "fastride-fc205.firebaseapp.com",
+    databaseURL: "https://fastride-fc205-default-rtdb.firebaseio.com",
+    projectId: "fastride-fc205",
+    storageBucket: "fastride-fc205.appspot.com",
+    messagingSenderId: "1048470810385",
+    appId: "1:1048470810385:web:7b8b42d4ada944d5eaa6b0"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+var database = getDatabase();
+var dataRef = ref(database);
+
 // message alert
 function messageAlert(title, message, type) {
     const messageStack = document.querySelector(".message-stack");
@@ -66,6 +88,7 @@ loginPageTitle.textContent = `Login as ${sessionStorage.getItem("signInAccountTy
 const emailInput = document.getElementById("email-input");
 const passwordInput = document.getElementById("password-input");
 const continueButton = document.querySelector("main button");
+const loader = document.querySelector(".loader");
 
 continueButton.onclick = () => {
     let email = emailInput.value;
@@ -76,7 +99,63 @@ continueButton.onclick = () => {
     } else if (password == '') {
         messageAlert("Error in Password", "Enter a valid password", false);
     } else {
-        messageAlert("Successful", "You have logged in successfully", true);
+        continueButton.style.display = 'none';
+        loader.style.display = 'block';
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                loader.style.display = 'none';
+                const user = userCredential.user;
+                if (sessionStorage.getItem("signInAccountType") == 'rider') {
+                    get(child(dataRef, "rider"))
+                        .then((snapshot) => {
+                            snapshot.forEach(element => {
+                                if (element.val().Email == email) {
+                                    localStorage.setItem("name", `${element.val().FirstName} ${element.val().LastName}`);
+                                    localStorage.setItem("email", email);
+                                    localStorage.setItem("phone", element.val().Phone);
+                                    localStorage.setItem("accountType", 'rider');
+                                }
+                            })
+                        })
+
+                    setTimeout(() => {
+                        window.location.href = '/';
+                    }, 3000);
+                } else {
+                    get(child(dataRef, "driver"))
+                        .then((snapshot) => {
+                            snapshot.forEach(element => {
+                                if (element.val().Email == email) {
+                                    localStorage.setItem("name", `${element.val().Name}`);
+                                    localStorage.setItem("email", email);
+                                    localStorage.setItem("phone", element.val().Phone);
+                                    localStorage.setItem("accountType", 'driver');
+                                    localStorage.setItem('profilePic', element.val().ProfilePic);
+                                    localStorage.setItem('licensePic', element.val().LicensePic);
+                                    localStorage.setItem('registrationNumber', element.val().RegistrationNumber);
+                                    localStorage.setItem("color", element.val().Color);
+                                    localStorage.setItem('company', element.val().Company);
+                                    localStorage.setItem('model', element.val().Model);
+                                }
+                            })
+                        })
+
+                    setTimeout(() => {
+                        window.location.href = '/';
+                    }, 3000);
+                }
+                messageAlert("Successful", "Login successful", true);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                messageAlert(errorCode, errorMessage, false);
+                loader.style.display = 'none';
+                continueButton.style.display = 'block';
+            });
+
     }
 }
 

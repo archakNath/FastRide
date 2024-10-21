@@ -61,7 +61,7 @@
                     placeholder="Vehicle Registration Number (eg. GJ 03 AY 1097)">
                 <input type="text" name="" id="vehicle-color-input"
                     placeholder="Vehicle Color (eg. Red/White/Black/etc.)">
-                <select id="vehicle" name="vehicle">
+                <select id="vehicle-company-input" name="vehicle">
                     <option value="choose">Choose Vehicle Company</option>
                     <option value="Maruti Suzuki">Maruti Suzuki</option>
                     <option value="Hyundai">Hyundai</option>
@@ -89,6 +89,7 @@
                     <input type="file" class="input" accept="image/*" style="display: none;" />
                 </div>
                 <button>Continue</button>
+                <div class="loader"></div>
             </div>
         </div>
     </main>
@@ -96,7 +97,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/asset/js/document.js"></script>
+    <script type="module" src="/asset/js/document.js" defer></script>
 </body>
 
 </html>

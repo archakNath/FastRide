@@ -11,6 +11,20 @@ navCancelButton.onclick = () => {
     mobileNav.style.display = "none";
 }
 
+// account login status
+
+const profileLoginButtons = document.querySelector("header .nav2 ul")
+const profileButton = document.querySelector("header .profile-dp");
+profileButton.onclick = () => {
+    window.location.href = '/page/profile.html';
+}
+
+if(localStorage.getItem("accountType") == 'rider' || localStorage.getItem("accountType") == 'driver'){
+    profileButton.style.display = "flex";
+    profileLoginButtons.style.display = "none";
+    profileButton.innerHTML = localStorage.getItem("name").charAt(0);
+}
+
 // Login message
 const loginDialog = document.querySelector(".login-options");
 const driverSignIn = document.querySelector(".driverSignIn");
